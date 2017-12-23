@@ -2,6 +2,27 @@
 
 {% block content %}
 
-    
+<div class="container-fluid text-center">
+  <form action="/home" method="post" >
+    <div>
+      <label for="form"></label>
+    </div>
+    <div class="mb-2">
+      <label for="id">Identifiant</label><br/>
+      <input type="text" id="id" name="user_id" />
+    </div>
+    <div class="mb-2">
+      <label for="pw">Mot de passe</label><br/>
+      <input type="password" id="password" name="user_password" />
+    </div>
+
+    <div class="button mt-3 rounded">
+      <button type="submit">Connexion</button>
+    </div>
+    <div>
+      Vous ne possédez pas encore de compte ?<br/>
+      <a href="./form">Inscrivez-vous</a>
+  </form>
+</div>
 
 {% endblock %}

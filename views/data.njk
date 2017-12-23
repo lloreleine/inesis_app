@@ -1,0 +1,26 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+<div class="container-fluid mt-5 text-center">
+  <h5>Merci {{data.user_name}} {{data.user_firstname}} !</h5>
+  <p class="mt-3">Votre inscription a bien été prise en compte<br/>
+    Voici les données collectées :<br/>
+  </p>
+
+    <div class="container">
+      Votre nom : {{data.user_name}}<br/>
+      Votre prénom : {{data.user_firstname}}<br/>
+      Votre genre : {{data.user_gender}}<br/>
+      Votre date de naissance : {{data.user_birthdate}}<br/>
+      Votre âge : {{age}}<br/>
+      Votre email : {{data.user_email}}<br/>
+      Votre mot de passe : {{data.user_password}}<br/>
+      Votre niveau : {{data.user_password_conf}}<br/>
+      Votre index : {{data.user_index}}<br/>
+      Les conditions climatiques sous lesquelles vous jouez :<br/>
+      {{data.weather}}<br/>
+    </div>
+</div>
+
+{% endblock %}

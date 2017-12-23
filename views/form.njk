@@ -1,0 +1,67 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+<div class="container text-center pt-3" style="width:400px;">
+  <form action="/data" method="post" >
+    <div>
+      <label for="form">Rejoignez notre communauté</label>
+    </div>
+    <div class="mb-2">
+      <input type="text" id="name" name="user_name" placeholder="Nom" />
+    </div>
+    <div class="mb-2">
+      <input type="text" id="firstname" name="user_firstname" placeholder="Prénom"/>
+    </div>
+    <div class="mb-2">
+      <label for="gender">Genre :</label>&nbsp;&nbsp;
+      <select name="user_gender" id="gender">
+        <option value="Femme">Femme</option>&nbsp;
+        <option value="Homme">Homme</option>
+      </select>
+    </div>
+    <div class="mb-2">
+      <input type="email" id="email" name="user_email" placeholder="Email" />
+    </div>
+    <div class="mb-2">
+      <input type="password" id="password" name="user_password" placeholder="Mot de passe"/>
+    </div>
+    <div class="mb-2">
+      <input type="password" id="password_conf" name="user_password_conf" placeholder="Confirmez votre mot de passe"/>
+    </div>
+    <div class="mb-2">
+      <label for="birthdate">Date de naissance</label><br/>
+      <input type="date" id="birthdate" name="user_birthdate" />
+    </div>
+    <div class="mb-2">
+      <label for="level">Votre niveau :</label>&nbsp;&nbsp;
+      <select name="level" id="level">
+        <option value="beginner">Débutant</option>
+        <option value="intermediate">Confirmé</option>
+        <option value="expert">Expert</option>
+      </select>
+    </div>
+    <div class="mb-2">
+      <label for="index">Votre index :</label>&nbsp;&nbsp;
+      <input type="text" id="index" name="user_index" size="5"/>
+    </div>
+    <div class="mb-2">
+      <label for="weather">Sous quelles conditions climatiques<br/>
+      jouez-vous habituellement ?</label><br/>
+      <input type="checkbox" name="weather" id="sun" value="sun"/>
+        <label for="sun">Grand soleil</label>&nbsp;
+      <input type="checkbox" name="weather" id="rain" value="rain"/>
+        <label for="rain">Pluie</label>&nbsp;
+      <input type="checkbox" name="weather" id="wind" value="wind"/>
+        <label for="wind">Vent</label>&nbsp;
+      <input type="checkbox" name="weather" id="snow" value="snow"/>
+        <label for="snow">Neige</label>
+    </div>
+
+    <div class="button mt-3 rounded">
+      <button type="submit">Inscription</button>
+    </div>
+  </form>
+</div>
+
+{% endblock %}
