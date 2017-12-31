@@ -3,26 +3,96 @@
 {% block content %}
 
 <div class="container-fluid text-center">
-  <form action="/home" method="post" >
-    <div>
-      <label for="form"></label>
-    </div>
-    <div class="mb-2">
-      <label for="id">Identifiant</label><br/>
-      <input type="text" id="id" name="user_id" />
-    </div>
-    <div class="mb-2">
-      <label for="pw">Mot de passe</label><br/>
-      <input type="password" id="password" name="user_password" />
+  <h2 class="mt-3">Bienvenue {{id}} !</h2>
+
+  <div class="container">
+    <div class="row justify-content-md-center mt-4">
+      <div class="col col-lg-3">
+        <div class="card border-warning" style="min-height:12rem;">
+          <div class="card-body">
+            <h5 class="card-title">Idées</h5>
+            <p class="card-text">Proposez vos idées sur l'Inesis Park</p>
+          </div>
+          <div class="card-body">
+            <a href="/idea" class="btn btn-warning text-dark rounded">J'ai une idée !</a>
+          </div>
+        </div>
+      </div>
+      <div class="col col-lg-3">
+        <div class="card border-warning" style="min-height:12rem;">
+          <div class="card-body">
+            <h5 class="card-title">Test Produits</h5>
+            <p class="card-text">Vous souhaitez découvrir un produit ?</p>
+          </div>
+          <div class="card-body">
+            <a href="/test" class="btn btn-warning text-dark rounded">Tester</a>
+          </div>
+        </div>
+      </div>
+      {# <div class="col-md-auto">
+        Variable width content
+      </div> #}
     </div>
 
-    <div class="button mt-3 rounded">
-      <button type="submit">Connexion</button>
+    <div class="row justify-content-md-center mt-4">
+      <div class="col col-lg-3">
+        <div class="card border-warning" style="min-height:12rem;">
+          <div class="card-body">
+            <h5 class="card-title">Feedback</h5>
+            <p class="card-text">Faites-nous savoir ce que vous pensez de nos produits</p>
+          </div>
+          <div class="card-body">
+            <a href="/feedback" class="btn btn-warning text-dark rounded">Commentaires</a>
+          </div>
+        </div>
+      </div>
+      <div class="col col-lg-3">
+        <div class="card border-warning" style="min-height:12rem;">
+          <div class="card-body">
+            <h5 class="card-title">FAQ</h5>
+            <p class="card-text">Posez-nous toutes vos questions<br/>?!</p>
+          </div>
+          <div class="card-body">
+            <a href="/faq" class="btn btn-warning text-dark rounded">J'ai une question</a>
+          </div>
+        </div>
+      </div>
+      {# <div class="col-md-auto">
+        Variable width content
+      </div> #}
     </div>
-    <div>
-      Vous ne possédez pas encore de compte ?<br/>
-      <a href="./form">Inscrivez-vous</a>
-  </form>
+
+    <div class="row justify-content-md-center mt-4">
+      <div class="col col-lg-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Météo du jour</h5>
+            {{city}} - {{weather.weather[0].main}} <br/>
+            <img src="../images/{{weather.weather[0].main}}.gif" width="130" style="margin:10px;"/><br/>
+            {{weather.main.temp}}°C
+            <p class="card-text mt-2">Saisissez votre ville :</p>
+            <form>
+              <input id="input" type="text" placeholder="Recherche">
+              <button id="myButton" type="button" class="mt-3">Afficher la météo</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </div>
+
+<script>
+const userInput = document.querySelector("#input");
+const myButton = document.querySelector("#myButton");
+
+myButton.addEventListener("click", () => {
+  window.location.href = "http://localhost:3000/index/" + userInput.value;
+});
+
+</script>
+
+
 
 {% endblock %}

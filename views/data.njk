@@ -5,7 +5,7 @@
 <div class="container-fluid mt-5 text-center">
   <h5>Merci {{data.user_name}} {{data.user_firstname}} !</h5>
   <p class="mt-3">Votre inscription a bien été prise en compte<br/>
-    Voici les données collectées :<br/>
+    Voici les informations collectées dans notre base de données :<br/>
   </p>
 
     <div class="container">
@@ -15,11 +15,14 @@
       Votre date de naissance : {{data.user_birthdate}}<br/>
       Votre âge : {{age}}<br/>
       Votre email : {{data.user_email}}<br/>
-      Votre mot de passe : {{data.user_password}}<br/>
-      Votre niveau : {{data.user_password_conf}}<br/>
+      Votre niveau : {{data.user_level}}<br/>
       Votre index : {{data.user_index}}<br/>
       Les conditions climatiques sous lesquelles vous jouez :<br/>
       {{data.weather}}<br/>
+    </div>
+
+    <div class="container">
+      <a href="/" class="btn btn-warning text-dark rounded mt-4">Connectez-vous</a>
     </div>
 </div>
 

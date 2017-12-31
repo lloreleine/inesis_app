@@ -1,0 +1,28 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+<div class="container-fluid text-center">
+  <form action="/index" method="post" >
+    <div>
+      <label for="form"></label>
+    </div>
+    <div class="mb-2">
+      <label for="id">Identifiant</label><br/>
+      <input type="text" id="id" name="user_id" />
+    </div>
+    <div class="mb-2">
+      <label for="pw">Mot de passe</label><br/>
+      <input type="password" id="password" name="user_password" />
+    </div>
+
+    <div class="button mt-3 rounded">
+      <button type="submit" class="rounded">Connexion</button>
+    </div>
+    <div class="mt-4">
+      Vous ne possédez pas encore de compte ?<br/>
+      <a href="./form">Inscrivez-vous</a>
+  </form>
+</div>
+
+{% endblock %}
