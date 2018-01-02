@@ -74,6 +74,8 @@ app.get("/index/:city", function(request, result) {
 });
 
 function fillDataBase(object, age){
+  console.log(object);
+  console.log(age);
   client.query(
     "INSERT INTO users_data VALUES ($1::serial, $2::varchar(250), $3::varchar(250), $4::varchar(10), $5::date, $6::integer, $7::varchar(100), $8::varchar(20), $9::varchar(10), $10::float4, $11::text)",
     ['', object.user_name, object.user_firstname, object.user_gender, object.user_birthdate, age, object.user_email, object.user_password, object.user_level, object.user_index, object.weather],
